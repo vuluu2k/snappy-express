@@ -1,63 +1,62 @@
-import styles from "rollup-plugin-styles";
+import styles from 'rollup-plugin-styles';
 const autoprefixer = require('autoprefixer');
 import babel from '@rollup/plugin-babel';
 import sourcemaps from 'rollup-plugin-sourcemaps';
-import { terser } from "rollup-plugin-terser";
+import { terser } from 'rollup-plugin-terser';
 
 // the entry point for the library
-const input = 'src/index.js'
+const input = 'src/index.js';
 
-// 
+//
 var MODE = [
-    {
-        fomart: 'cjs'
-    },
-    {
-        fomart: 'esm'
-    },
-    {
-        fomart: 'umd'
-    }
-]
+  {
+    file: './index.js',
+    format: 'cjs',
+    plugins: [terser()],
+  },
+  {
+    file: 'dist/index.cjs.js',
+    fomart: 'cjs',
+  },
+  {
+    file: 'dist/index.esm.js',
+    fomart: 'esm',
+  },
+  {
+    file: 'dist/index.umd.js',
+    fomart: 'umd',
+  },
+];
 
-var config = []
+var config = [];
 
-MODE.map((m) => {
-    var conf = {
-        input: input,
-        output: {
-            // then name of your package
-            name: "react-awesome-buttons",
-            file: `dist/index.js`,
-            format: m.fomart,
-            exports: "auto",
-            plugins: [terser()],
-            globals: { react: 'React' },
+MODE.map(m => {
+  var conf = {
+    input: input,
+    output: {
+      name: 'react-awesome-buttons',
+      file: m.file,
+      format: m.fomart,
+      exports: 'auto',
+      plugins: m.plugins,
+      globals: { react: 'React' },
+    },
+    external: ['react', /@babel\/runtime/],
+    plugins: [
+      babel({
+        exclude: 'node_modules/**',
+        plugins: ['@babel/transform-runtime'],
+        babelHelpers: 'runtime',
+      }),
+      sourcemaps(),
+      styles({
+        postcss: {
+          plugins: [autoprefixer()],
         },
-        // this externelizes react to prevent rollup from compiling it
-        external: ["react", /@babel\/runtime/],
-        plugins: [
-            // these are babel comfigurations
-            babel({
-                exclude: 'node_modules/**',
-                plugins: ['@babel/transform-runtime'],
-                babelHelpers: 'runtime'
-            }),
-            // this adds sourcemaps
-            sourcemaps(),
-            // this adds support for styles
-            styles({
-                postcss: {
-                    plugins: [
-                        autoprefixer()
-                    ]
-                }
-            })
-        ]
-    }
-    config.push(conf)
-})
+      }),
+    ],
+  };
+  config.push(conf);
+});
 
-export default [
-    ...config,
-]
+export default [...config];
