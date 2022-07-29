@@ -28,7 +28,7 @@ MODE.map((m) => {
         output: {
             // then name of your package
             name: "react-awesome-buttons",
-            file: `dist/index.${m.fomart}.js`,
+            file: `dist/index.js`,
             format: m.fomart,
             exports: "auto",
             plugins: [terser()],

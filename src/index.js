@@ -1,5 +1,6 @@
 
 import SnyStatus from "./components/SnyStatus";
+import './styles/common.scss'
 
 const returnLibrary = () => {
   return {
