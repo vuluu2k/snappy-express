@@ -6,6 +6,11 @@
 
 <a href="https://github.com/LuuCongQuangVu">@vuluu2k</a>
 
+# Components
+```jsx
+  SnyStatus,SnyButton
+```
+
 # SnyStatus
 
 ```jsx
@@ -43,3 +48,4 @@ SnyStatus.defaultProps = {
 };
 
 ```
+<img src="https://statics.pancake.vn/user-content.pancake.vn/2022/7/29/af2faf6d24774c07488abf536e3caa73c473f29b.png" width="100%" />
