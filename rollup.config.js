@@ -15,8 +15,13 @@ var MODE = [
     plugins: [terser()],
   },
   {
-    file: 'dist/index.cjs.js',
+    file: 'dist/index.js',
     fomart: 'cjs',
+  },
+  {
+    file: 'dist/index.min.js',
+    fomart: 'cjs',
+    plugins: [terser()],
   },
   {
     file: 'dist/index.esm.js',
@@ -39,9 +44,13 @@ MODE.map(m => {
       format: m.fomart,
       exports: 'auto',
       plugins: m.plugins,
-      globals: { react: 'React' },
+      globals: {
+        react: 'React',
+        'react-dom': 'ReactDOM',
+        'prop-types': 'PropTypes',
+      },
     },
-    external: ['react', /@babel\/runtime/],
+    external: ['react', /@babel\/runtime/, 'react-dom', 'prop-types', 'sass', 'node-sass'],
     plugins: [
       babel({
         exclude: 'node_modules/**',

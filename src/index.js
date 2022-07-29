@@ -1,6 +1,6 @@
+import './styles/common.scss';
 import SnyStatus from './components/SnyStatus';
 import SnyButton from './components/SnyButton';
-import './styles/common.scss';
 
 const returnLibrary = () => {
   return {

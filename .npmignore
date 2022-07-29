@@ -1,5 +1,5 @@
 ## the src folder
-dist
+# dist
 src
 .babelrc
 rollup.config.js
