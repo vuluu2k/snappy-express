@@ -1,15 +1,19 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { Tooltip, Badge } from 'antd';
 
 export default class SnyStatus extends Component {
   render() {
     const { status, statusArray, status_vi, type, label, children, tooltip, badge, style, className } = this.props;
-
     const checkStatus = statusArray.find(item => item.array.includes(status));
     return (
-      <div className={`sny-status ${status && 'w-148'} ${type} ${checkStatus && checkStatus?.color} ${className}`} style={style}>
-        {label || children || status_vi}
-      </div>
+      <Tooltip {...tooltip}>
+        <Badge {...badge}>
+          <div className={`sny-status ${status && 'w-148'} ${type} ${checkStatus && checkStatus?.color} ${className}`} style={style}>
+            {label || children || status_vi}
+          </div>
+        </Badge>
+      </Tooltip>
     );
   }
 }
@@ -44,5 +48,5 @@ SnyStatus.defaultProps = {
   tooltip: {},
   badge: {},
   style: {},
-  className: '',
+  className:'',
 };
