@@ -1,6 +1,6 @@
 {
   "name": "snappy-express",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "components used snappy express ",
   "main": "index.js",
   "scripts": {
