@@ -1,2 +1,2 @@
-import lib from './dist/index.cjs.min'
-export default lib
+import { SnyStatus, SnyButton } from './dist/index.cjs.min';
+export { SnyStatus, SnyButton };
