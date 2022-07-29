@@ -10,13 +10,13 @@ export default class SnyTabs extends Component {
     const { options, onClick, style, styleTab, className, value,arrayActive } = this.props;
 
     return (
-      <Row className={`sny-tabs ${className}`} style={style}>
+      <div className={`sny-tabs ${className}`} style={style}>
         {options.map((item, idx) => (
-          <Col key={idx} onClick={() => onClick(item.value, item.label)} className={`tab ${(item.value === value||arrayActive.includes(item.value) )&& 'tab-active'}`} style={styleTab}>
+          <div key={idx} onClick={() => onClick(item.value, item.label)} className={`tab ${(item.value === value||arrayActive.includes(item.value) )&& 'tab-active'}`} style={styleTab}>
             {item.label}
-          </Col>
+          </div>
         ))}
-      </Row>
+      </div>
     );
   }
 }

@@ -56,7 +56,6 @@ MODE.map(m => {
       /@ant-design\/icons/,
       'react-icons/bs',
       'react-icons/io5',
-      'antd',
     ],
     plugins: [
       babel({
