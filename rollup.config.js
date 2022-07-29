@@ -20,11 +20,7 @@ var MODE = [
     }
 ]
 
-
-
-
 var config = []
-
 
 MODE.map((m) => {
     var conf = {
@@ -35,7 +31,8 @@ MODE.map((m) => {
             file: `dist/index.${m.fomart}.js`,
             format: m.fomart,
             exports: "auto",
-            plugins: [terser()]
+            plugins: [terser()],
+            globals: { react: 'React' },
         },
         // this externelizes react to prevent rollup from compiling it
         external: ["react", /@babel\/runtime/],

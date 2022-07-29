@@ -1,14 +1,14 @@
 {
   "name": "snappy-express",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "components used snappy express ",
   "main": "index.js",
   "scripts": {
+    "build": "rollup -c",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "build": "rollup -c",
     "url": "git+https://github.com/LuuCongQuangVu/snappy-express.git"
   },
   "keywords": [
@@ -25,7 +25,9 @@
   "homepage": "https://github.com/LuuCongQuangVu/snappy-express#readme",
   "dependencies": {
     "@babel/runtime": "^7.18.9",
-    "prop-types": "^15.8.1"
+    "node-sass": "^7.0.1",
+    "prop-types": "^15.8.1",
+    "sass": "^1.54.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.18.9",

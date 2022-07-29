@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import '../styles/common.scss';
 
 export default class SnyStatus extends Component {
   render() {
