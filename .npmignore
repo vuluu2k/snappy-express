@@ -1,4 +1,5 @@
 ## the src folder
+dist
 dist/index.cjs.js
 dist/index.esm.js
 dist/index.umd.js
