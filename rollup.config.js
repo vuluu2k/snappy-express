@@ -9,23 +9,23 @@ const input = 'src/index.js';
 
 //
 var MODE = [
-  {
-    file: 'dist/index.cjs.js',
-    fomart: 'cjs',
-  },
+//   {
+//     file: 'dist/index.cjs.js',
+//     fomart: 'cjs',
+//   },
   {
     file: 'dist/index.cjs.min.js',
     fomart: 'cjs',
     plugins: [terser()],
   },
-  {
-    file: 'dist/index.esm.js',
-    fomart: 'esm',
-  },
-  {
-    file: 'dist/index.umd.js',
-    fomart: 'umd',
-  },
+//   {
+//     file: 'dist/index.esm.js',
+//     fomart: 'esm',
+//   },
+//   {
+//     file: 'dist/index.umd.js',
+//     fomart: 'umd',
+//   },
 ];
 
 var config = [];
