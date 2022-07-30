@@ -1,6 +1,6 @@
 {
   "name": "snappy-express",
-  "version": "1.0.8",
+  "version": "1.0.11",
   "description": "components used snappy express ",
   "main": "index.js",
   "scripts": {
@@ -26,6 +26,7 @@
   "dependencies": {
     "@ant-design/icons": "^4.7.0",
     "@babel/runtime": "^7.18.9",
+    "antd": "^4.22.2",
     "node-sass": "^7.0.1",
     "prop-types": "^15.8.1",
     "react-icons": "^4.4.0",
