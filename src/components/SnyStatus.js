@@ -4,12 +4,20 @@ import { Tooltip, Badge } from 'antd';
 
 export default class SnyStatus extends Component {
   render() {
-    const { status, statusArray, status_vi, type, label, children, tooltip, badge, style, className } = this.props;
+    const { status, statusArray, status_vi, type, label, children, tooltip, badge, style, className, base } = this.props;
+
     const checkStatus = statusArray.find(item => item.array.includes(status));
+    if (base) {
+    }
+
     return (
       <Tooltip {...tooltip}>
         <Badge {...badge}>
-          <div className={`sny-status ${status && 'w-148'} ${type} ${checkStatus && checkStatus?.color} ${className}`} style={style}>
+          <div
+            className={`sny-status ${base && 'base'} ${status && 'w-148'} ${base ? `base-${type}` : type} ${
+              checkStatus && (base ? `base-${checkStatus?.color}` : checkStatus?.color)
+            } ${className}`}
+            style={style}>
             {label || children || status_vi}
           </div>
         </Badge>
@@ -48,5 +56,5 @@ SnyStatus.defaultProps = {
   tooltip: {},
   badge: {},
   style: {},
-  className:'',
+  className: '',
 };

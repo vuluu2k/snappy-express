@@ -226,6 +226,10 @@ body {
     font-size: 12px;
     min-width: 84px;
 
+    &.base{
+      all:unset;
+    }
+
     &.w-148 {
       min-width: 148px;
     }
@@ -237,11 +241,19 @@ body {
       border: 1px solid $color;
     }
 
+    &.base-orange{
+      color:#ad4e00;
+    }
+
     &.red {
       $color: #a8071a;
       color: $color;
       background-color: #fff1f0;
       border: 1px solid $color;
+    }
+
+    &.base-red{
+      color:#a8071a;
     }
 
     &.blue {
@@ -251,11 +263,19 @@ body {
       border: 1px solid $color;
     }
 
+    &.base-blue{
+      color:#1d39c4;
+    }
+
     &.cyan {
       $color: #006d75;
       color: $color;
       background-color: #e6fffb;
       border: 1px solid $color;
+    }
+
+    &.base-cyan{
+      color:#006d75;
     }
 
     &.purple {
@@ -265,11 +285,19 @@ body {
       border: 1px solid $color;
     }
 
+    &.base-purple{
+      color:#722ed1;
+    }
+
     &.green {
       $color: #135200;
       color: $color;
       background-color: #f6ffed;
       border: 1px solid $color;
+    }
+
+    &.base-green{
+      color:#135200;
     }
   }
 }
