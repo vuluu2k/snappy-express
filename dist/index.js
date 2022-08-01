@@ -32,6 +32,61 @@ n(css,{});
 function _createSuper$2(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct$2(); return function _createSuperInternal() { var Super = _getPrototypeOf__default["default"](Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf__default["default"](this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn__default["default"](this, result); }; }
 
 function _isNativeReflectConstruct$2() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
+var trackingStatus = [{
+  name: 'request_received',
+  text: 'Chờ lấy hàng'
+}, {
+  name: 'processing_picked_up',
+  text: 'Đang lấy hàng'
+}, {
+  name: 'import_picking_warehouse',
+  text: 'Nhập kho lấy'
+}, {
+  name: 'import_returning_warehouse',
+  text: 'Nhập kho hoàn'
+}, {
+  name: 'picked_up_fail',
+  text: 'Chưa lấy được hàng'
+}, {
+  name: 'picked_up',
+  text: 'Đã lấy'
+}, {
+  name: 'waiting_on_the_way',
+  text: 'Chờ trung chuyển'
+}, {
+  name: 'processing_on_the_way',
+  text: 'Đang trung chuyển'
+}, {
+  name: 'on_the_way',
+  text: 'Đang trong kho'
+}, {
+  name: 'out_for_delivery',
+  text: 'Đang giao'
+}, {
+  name: 'part_delivery',
+  text: 'Giao một phần'
+}, {
+  name: 'delivered',
+  text: 'Giao thành công'
+}, {
+  name: 'undeliverable',
+  text: 'Giao không thành'
+}, {
+  name: 'waiting_for_return',
+  text: 'Chờ hoàn'
+}, {
+  name: 'on_the_way_returning',
+  text: 'Trung chuyển hoàn'
+}, {
+  name: 'returning',
+  text: 'Đang hoàn'
+}, {
+  name: 'returned',
+  text: 'Đã hoàn'
+}, {
+  name: 'canceled',
+  text: 'Đã hủy'
+}];
 
 var SnyStatus = /*#__PURE__*/function (_Component) {
   _inherits__default["default"](SnyStatus, _Component);
@@ -47,6 +102,8 @@ var SnyStatus = /*#__PURE__*/function (_Component) {
   _createClass__default["default"](SnyStatus, [{
     key: "render",
     value: function render() {
+      var _trackingStatus$find;
+
       var _this$props = this.props,
           status = _this$props.status,
           statusArray = _this$props.statusArray,
@@ -62,11 +119,12 @@ var SnyStatus = /*#__PURE__*/function (_Component) {
       var checkStatus = statusArray.find(function (item) {
         return item.array.includes(status);
       });
-
       return /*#__PURE__*/React__default["default"].createElement(antd.Tooltip, tooltip, /*#__PURE__*/React__default["default"].createElement(antd.Badge, badge, /*#__PURE__*/React__default["default"].createElement("div", {
         className: "sny-status ".concat(base && 'base', " ").concat(status && 'w-148', " ").concat(base ? "base-".concat(type) : type, " ").concat(checkStatus && (base ? "base-".concat(checkStatus === null || checkStatus === void 0 ? void 0 : checkStatus.color) : checkStatus === null || checkStatus === void 0 ? void 0 : checkStatus.color), " ").concat(className),
         style: style
-      }, label || children || status_vi)));
+      }, label || children || status_vi || ((_trackingStatus$find = trackingStatus.find(function (item) {
+        return item.name === status;
+      })) === null || _trackingStatus$find === void 0 ? void 0 : _trackingStatus$find.text))));
     }
   }]);
 
