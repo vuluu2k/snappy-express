@@ -48,10 +48,7 @@ MODE.map(m => {
     external: [
       'react',
       /@babel\/runtime/,
-      'react-dom',
       'prop-types',
-      'sass',
-      'node-sass',
       'react-icons/ai',
       /@ant-design\/icons/,
       'react-icons/bs',
