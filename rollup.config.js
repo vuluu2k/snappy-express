@@ -9,12 +9,12 @@ const input = 'src/index.js';
 
 //
 var MODE = [
-  //   {
-  //     file: 'dist/index.cjs.js',
-  //     fomart: 'cjs',
-  //   },
+    {
+      file: 'dist/index.js',
+      fomart: 'cjs',
+    },
   {
-    file: 'dist/index.cjs.min.js',
+    file: 'dist/index.min.js',
     fomart: 'cjs',
     plugins: [terser()],
   },
@@ -45,16 +45,7 @@ MODE.map(m => {
         'prop-types': 'PropTypes',
       },
     },
-    external: [
-      'react',
-      /@babel\/runtime/,
-      'prop-types',
-      'react-icons/ai',
-      /@ant-design\/icons/,
-      'react-icons/bs',
-      'react-icons/io5',
-      'antd',
-    ],
+    external: ['react', /@babel\/runtime/, 'prop-types', 'react-icons/ai', /@ant-design\/icons/, 'react-icons/bs', 'react-icons/io5', 'antd'],
     plugins: [
       babel({
         exclude: 'node_modules/**',
