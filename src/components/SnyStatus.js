@@ -45,7 +45,7 @@ SnyStatus.defaultProps = {
     { array: ['processing_picked_up', 'out_for_delivery', 'picked_up'], color: 'blue' },
     { array: ['import_picking_warehouse', 'on_the_way', 'import_returning_warehouse', 'returned'], color: 'cyan' },
     { array: ['picked_up_fail', 'undeliverable', 'return_fail', 'canceled'], color: 'red' },
-    { array: ['processing_on_the_way', 'on_the_way_returning'], color: 'purple' },
+    { array: ['processing_on_the_way', 'on_the_way_returning','waiting_on_the_way'], color: 'purple' },
     { array: ['delivered'], color: 'green' },
   ],
   status: undefined,

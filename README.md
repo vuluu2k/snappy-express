@@ -18,6 +18,16 @@ npm install snappy-express
 yarn add snappy-express
 ```
 
+## Attachment
+
+```bash
+npm install antd @ant-design/icons react-icons
+```
+
+```bash
+yarn add antd @ant-design/icons react-icons
+```
+
 ## 🔨 Usage
 
 ```jsx
@@ -55,7 +65,7 @@ SnyStatus.defaultProps = {
     { array: ['processing_picked_up', 'out_for_delivery', 'picked_up'], color: 'blue' },
     { array: ['import_picking_warehouse', 'on_the_way', 'import_returning_warehouse', 'returned'], color: 'cyan' },
     { array: ['picked_up_fail', 'undeliverable', 'return_fail', 'canceled'], color: 'red' },
-    { array: ['processing_on_the_way', 'on_the_way_returning'], color: 'purple' },
+    { array: ['processing_on_the_way', 'on_the_way_returning', 'waiting_on_the_way'], color: 'purple' },
     { array: ['delivered'], color: 'green' },
   ],
   status: undefined,
@@ -109,5 +119,36 @@ SnyButton.defaultProps = {
   iconButton: false,
   tooltip: {},
   template: '',
+};
+```
+
+# SnyTabs
+
+<img src="https://statics.pancake.vn/user-content.pancake.vn/2022/7/29/b6957c850f6dfa4ee99c2ba2b10a8fedf4e385a7.svg" width="100%" />
+
+```jsx
+SnyTabs.propTypes = {
+  options: PropTypes.array,
+  onClick: PropTypes.func,
+  style: PropTypes.object,
+  styleTab: PropTypes.object,
+  className: PropTypes.string,
+  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  arrayActive: PropTypes.array,
+};
+
+SnyTabs.defaultProps = {
+  options: [
+    { value: 1, label: 'SnappyExpress1' },
+    { value: 2, label: 'SnappyExpress2' },
+    { value: 3, label: 'SnappyExpress3' },
+    { value: 4, label: 'SnappyExpress4' },
+  ],
+  onClick: (value, label) => console.log(value, label),
+  style: {},
+  styleTab: {},
+  className: '',
+  value: 1,
+  arrayActive: [],
 };
 ```
